@@ -8,7 +8,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: '[name].js',
-    publicPath: ""
+    publicPath: ''
   },
   devServer: {
     contentBase: path.resolve(__dirname, 'dist'),
@@ -29,25 +29,28 @@ module.exports = {
       },
       {
         test: /\.css$/i,
-        use: ['style-loader', 'css-loader'],
+        use: ['style-loader', 'css-loader']
       },
       {
         test: /\.(jpg|png|svg)$/,
-        use: [
-          'file-loader'
-        ]
+        use: ['file-loader']
       },
       {
         test: /\.html$/i,
         use: {
-          loader: "html-loader",
+          loader: 'html-loader',
           options: {
             attributes: {
               list: [
                 {
                   attribute: 'src',
                   type: 'src',
-                  filter: (tag, attribute, attributes, resourcePath) => {
+                  filter: (
+                    tag,
+                    attribute,
+                    attributes,
+                    resourcePath
+                  ) => {
                     return tag.toLowerCase() === 'img';
                   }
                 }
@@ -65,4 +68,4 @@ module.exports = {
       template: './src/index.html'
     })
   ]
-}
+};

@@ -10,7 +10,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: '[name].[contenthash].js',
-    publicPath: ""
+    publicPath: ''
   },
   module: {
     rules: [
@@ -26,32 +26,34 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        use: [
-          MiniCssExtractPlugin.loader,
-          'css-loader'
-        ]
+        use: [MiniCssExtractPlugin.loader, 'css-loader']
       },
       {
         test: /\.(jpg|png|svg)$/,
         use: {
           loader: 'file-loader',
           options: {
-            name: "[name].[hash].[ext]",
-            outputPath: "images"
+            name: '[name].[hash].[ext]',
+            outputPath: 'images'
           }
         }
       },
       {
         test: /\.html$/i,
         use: {
-          loader: "html-loader",
+          loader: 'html-loader',
           options: {
             attributes: {
               list: [
                 {
                   attribute: 'src',
                   type: 'src',
-                  filter: (tag, attribute, attributes, resourcePath) => {
+                  filter: (
+                    tag,
+                    attribute,
+                    attributes,
+                    resourcePath
+                  ) => {
                     return tag.toLowerCase() === 'img';
                   }
                 }
@@ -59,13 +61,11 @@ module.exports = {
             }
           }
         }
-      },
+      }
     ]
   },
   optimization: {
-    minimizer: [
-      new OptimizeCSSAssetsPlugin({})
-    ],
+    minimizer: [new OptimizeCSSAssetsPlugin({})]
   },
   plugins: [
     new MiniCssExtractPlugin({
@@ -75,6 +75,6 @@ module.exports = {
       filename: 'index.html',
       template: './src/index.html'
     }),
-    new CleanWebpackPlugin(),
+    new CleanWebpackPlugin()
   ]
-}
+};
