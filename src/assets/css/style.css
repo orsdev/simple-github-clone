@@ -76,7 +76,7 @@
   position: absolute;
   display: inline-block;
   top: -1px;
-  right: 6px;
+  right: 11px;
   z-index: 2;
   width: 12px;
   height: 12px;
@@ -84,7 +84,7 @@
   border-radius: 50%;
 }
 
-@media (min-width: 859px) {
+@media (min-width: 860px) {
   .header--mobile {
     display: none;
   }
@@ -142,7 +142,7 @@
     -o-border-radius: 50%;
   }
 }
-@media (max-width: 860px) {
+@media (max-width: 859px) {
   .header--desktop {
     display: none;
   }
@@ -158,9 +158,14 @@
   }
   .header--mobile-top .fa-bars {
     font-size: 2.5rem;
+    opacity: 0.9;
+    font-weight: 100;
   }
   .header--mobile-top .notification {
     font-size: 2rem;
+  }
+  .header--mobile-top .notification .badge {
+    right: 5px;
   }
   .header--mobile-bottom {
     display: none;
@@ -225,20 +230,6 @@
 .main--aside-about {
   font-size: 1.6rem;
   color: #24292e;
-}
-.main--aside-profile-btn {
-  margin-top: 10px;
-  width: 100%;
-  text-align: center;
-  color: #24292e;
-  background: #f3f4f6;
-  box-shadow: 0 1px 0 rgba(27, 31, 35, 0.04), inset 0 1px 0 rgba(255, 255, 255, 0.25);
-  border-radius: 6px;
-  padding: 5px 16px;
-  height: 32px;
-  border: 1px solid #767676;
-  font-size: 1.4rem;
-  font-weight: 500;
 }
 
 .main--content {
@@ -335,6 +326,17 @@
 .main--content-repositories-item:nth-of-type(1) {
   border-top: 1px solid #d3d5d6;
 }
+.main--content-repositories-item-lang-icon {
+  display: inline-block;
+  margin-right: 100px;
+  height: 12px;
+  width: 12px;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
 .main--content-repositories-item-name {
   color: #0366d6;
   font-size: 2rem;
@@ -343,6 +345,28 @@
 }
 .main--content-repositories-item-name:hover {
   text-decoration: underline;
+}
+.main--content-repositories-item-about {
+  width: 399px;
+  font-size: 1.4rem;
+  padding-right: 2.4rem;
+  color: #585059;
+}
+.main--content-repositories-item-star-icon {
+  color: #585059;
+  display: inline-block;
+  line-height: 0;
+  margin-right: 5px;
+  font-size: 1.7rem;
+  font-weight: 600;
+}
+.main--content-repositories-item-fork-icon {
+  color: #585059;
+  display: inline-block;
+  line-height: 0;
+  margin-right: 5px;
+  font-size: 1.7rem;
+  font-weight: bolder;
 }
 
 .repository--header-footer {
@@ -372,8 +396,11 @@
   border: 1px solid #d3d5d6;
   border-radius: 6px;
 }
-.repository--star-btn span {
+.repository--star-btn i {
   margin-right: 6px;
+  font-size: 1.7rem;
+  font-weight: 600;
+  color: #585059;
 }
 
 .main {
@@ -385,6 +412,62 @@
   margin-bottom: 40px;
 }
 
+@media (max-width: 870px) {
+  .main {
+    flex-direction: column;
+    width: 90%;
+  }
+  .main--aside {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .main--aside-name {
+    margin-left: 20px;
+  }
+  .main--aside-fullname {
+    font-size: 2.2rem;
+  }
+  .main--aside-username {
+    font-size: 1.8rem;
+    line-height: 15px;
+  }
+  .main--aside-user-pic img {
+    width: 109px;
+    height: 109px;
+  }
+  .main--aside-about {
+    width: 100%;
+  }
+  .main--content {
+    width: 100%;
+  }
+  .main--content-tab-item {
+    padding: 8px 10px;
+  }
+  .main--content-repositories-item-about {
+    width: 85%;
+  }
+}
+@media (max-width: 500px) {
+  .main--aside-user-pic img {
+    width: 60px;
+    height: 60px;
+  }
+  .main--content-tab {
+    flex-wrap: wrap;
+  }
+  .main--content-tab-item {
+    padding: 8px 10px;
+  }
+}
+@media (max-width: 350px) {
+  .main--aside-name {
+    margin: 0;
+    width: 100%;
+    margin-bottom: 10px;
+  }
+}
 *,
 *::before,
 *::after {
