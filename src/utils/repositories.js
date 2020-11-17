@@ -29,8 +29,7 @@ const getRepositories = async () => {
     const request = await fetch('https://api.github.com/graphql', {
       method: 'post',
       headers: {
-        Authorization:
-          'Bearer 707d489fc492967dbbcb80c95d6ed5c41479cc21'
+        Authorization: process.env.GITHUB_TOKEN
       },
       body: JSON.stringify({ query: queryTag })
     });

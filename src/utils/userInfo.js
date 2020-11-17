@@ -3,11 +3,11 @@ const getUser = async () => {
     const request = await fetch('https://api.github.com/graphql', {
       method: 'post',
       headers: {
-        Authorization:
-          'Bearer 707d489fc492967dbbcb80c95d6ed5c41479cc21'
+        Authorization: process.env.GITHUB_TOKEN
       },
       body: JSON.stringify({
-        query: '{ viewer { name avatarUrl bio login }}'
+        query:
+          '{ viewer { name avatarUrl bio login status { message } }}'
       })
     });
 
@@ -32,6 +32,8 @@ function loadUserInfo(data) {
   const fullname = document.getElementById('fullname');
   const username = document.getElementById('username');
   const about = document.getElementById('about');
+  const status = document.getElementById('status');
+
   //  convert imgTags dom elements to array
   const toArray = Array.from(imgTags);
   toArray.map((img) => {
@@ -43,6 +45,10 @@ function loadUserInfo(data) {
   name.textContent = data.name;
   username.textContent = data.login;
   about.textContent = data.bio;
+
+  if (data.status) {
+    status.textContent = data.status.message;
+  }
 }
 
 getUser();
