@@ -53,11 +53,9 @@ function loadRepositories({ totalCount, nodes }) {
   // get dom elements
   const badge = document.getElementById('badge');
   const result = document.getElementById('result');
-  const totalRepo = document.getElementById('total-repo');
 
   badge.textContent = totalCount;
-  totalRepo.textContent = `${totalCount} results for public repositories`;
-  let html = '';
+  let html = `<h4 class="main--content-repositories-result" id="total-repo">${totalCount} results for public repositories</h4>`;
   nodes.map((node) => {
     html += `
       <div class="main--content-repositories-item">
