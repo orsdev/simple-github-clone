@@ -47,4 +47,4 @@ Before you begin, ensure you have met the following requirements:
     * CSS
     * [Hosted on](https://vercel.com/)
 
-[Preview](https://simple-github-clone.vercel.app)
+[Preview](https://github-clone-iota.vercel.app/)
