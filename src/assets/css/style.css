@@ -20,7 +20,7 @@
 
 .header {
   background-color: #24292e;
-  font-size: 1.4rem;
+  font-size: 1.3rem;
   width: 100%;
   color: white;
 }
@@ -32,7 +32,7 @@
   list-style: none;
 }
 .header--links-item {
-  font-weight: 600;
+  font-weight: 500;
 }
 .header--links-item a {
   color: white;
@@ -156,10 +156,8 @@
     justify-content: space-between;
     align-items: center;
   }
-  .header--mobile-top .fa-bars {
-    font-size: 2.5rem;
-    opacity: 0.9;
-    font-weight: 100;
+  .header--mobile-top .octicon-three-bars {
+    fill: white;
   }
   .header--mobile-top .notification {
     font-size: 2rem;
@@ -176,9 +174,16 @@
   .header--mobile-bottom .header--links li {
     padding: 8px 5px;
   }
+  .header--mobile-bottom .header--links li svg {
+    margin-right: 0.3rem;
+    fill: white;
+  }
   .header--mobile-bottom .header--links li:not(:last-child) {
     border-top: 1px solid #444d56;
     border-bottom: 1px solid #444d56;
+  }
+  .header--mobile-bottom .header--links li:last-child {
+    padding-bottom: 10px;
   }
   .header--mobile .avatar {
     display: flex;
@@ -202,7 +207,6 @@
 .main--aside {
   width: 307px;
   margin-bottom: 30px;
-  padding: 0 16px;
   margin-right: 20px;
   position: relative;
 }
@@ -248,15 +252,16 @@
   margin-bottom: 10px;
 }
 .main--aside-fullname {
-  font-size: 2.6rem;
+  font-size: 2.4rem;
   color: #24292e;
 }
 .main--aside-username {
   color: #586069;
-  font-size: 2rem;
+  font-size: 1.9rem;
+  color: #80868d;
 }
 .main--aside-about {
-  font-size: 1.6rem;
+  font-size: 1.5rem;
   color: #24292e;
 }
 
@@ -339,7 +344,7 @@
   margin-top: 20px;
 }
 .main--content-repositories-result {
-  font-size: 1.4rem;
+  font-size: 1.3rem;
   font-weight: 400;
 }
 .main--content-repositories-item {
@@ -367,7 +372,7 @@
 }
 .main--content-repositories-item-name {
   color: #0366d6;
-  font-size: 2rem;
+  font-size: 1.8rem;
   font-weight: 500;
   text-decoration: none;
 }
@@ -376,7 +381,7 @@
 }
 .main--content-repositories-item-about {
   width: 399px;
-  font-size: 1.4rem;
+  font-size: 1.35rem;
   padding-right: 2.4rem;
   color: #585059;
 }
@@ -420,9 +425,11 @@
   font-size: 1.2rem;
   font-weight: 600;
   padding: 4px 12px;
+  padding: 0.5em 1em;
   box-shadow: 0 1px 0 rgba(27, 31, 35, 0.04), inset 0 1px 0 rgba(255, 255, 255, 0.25);
-  border: 1px solid #d3d5d6;
-  border-radius: 6px;
+  border: 1px solid lightgray;
+  border-radius: 5px;
+  background-color: #f3f4f6;
 }
 .repository--star-btn i {
   margin-right: 6px;
@@ -438,9 +445,15 @@
   margin: auto;
   margin-top: 40px;
   margin-bottom: 40px;
+  padding: 0 8em;
 }
 
-@media (max-width: 870px) {
+@media (max-width: 970px) {
+  .main {
+    padding: 0 3em;
+  }
+}
+@media (max-width: 900px) {
   .main {
     flex-direction: column;
     width: 90%;
