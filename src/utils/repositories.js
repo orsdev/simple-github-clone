@@ -74,26 +74,24 @@ function loadRepositories({ totalCount, nodes }) {
                 };"></span>
                 ${node.primaryLanguage.name}
               </p>
-              <p class="main--content-repositories-item-star">
               ${
                 node.stargazers && node.stargazers.totalCount > 0
-                  ? `<i class="fa fa-star-o main--content-repositories-item-star-icon" aria-hidden="true"></i> ${node.stargazers.totalCount}`
+                  ? ` <p class="main--content-repositories-item-star">
+                   <i class="fa fa-star-o main--content-repositories-item-star-icon" aria-hidden="true"></i> ${node.stargazers.totalCount} </p>`
                   : ''
               }
-              </p>
-              <p class="main--content-repositories-item-fork">
-
-     ${
-       node.parent
-         ? `<i class="fa fa-code-fork main--content-repositories-item-fork-icon" aria-hidden="true"></i> ${node.parent.forkCount}`
-         : ''
-     }
-     ${
-       !node.parent && node.forkCount > 0
-         ? `<i class="fa fa-code-fork main--content-repositories-item-fork-icon" aria-hidden="true"></i> ${node.forkCount}`
-         : ''
-     }
-              </p>
+             
+             ${
+               node.parent
+                 ? `<p class="main--content-repositories-item-fork">
+            <i class="fa fa-code-fork main--content-repositories-item-fork-icon" aria-hidden="true"></i> ${node.parent.forkCount} </p>`
+                 : ''
+             }
+           ${
+             !node.parent && node.forkCount > 0
+               ? `<p class="main--content-repositories-item-fork"><i class="fa fa-code-fork main--content-repositories-item-fork-icon" aria-hidden="true"></i> ${node.forkCount}</p>`
+               : ''
+           }
               <p class="main--content-repositories-item-update">
               Updated on
                ${new Date(node.updatedAt).toLocaleString('default', {
