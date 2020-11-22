@@ -42,17 +42,10 @@
   height: 30px;
   border: 1px solid #444d56;
   border-radius: 6px;
-  -webkit-border-radius: 6px;
-  -moz-border-radius: 6px;
-  -ms-border-radius: 6px;
-  -o-border-radius: 6px;
 }
-.header--search-form:focus, .header--search-form:active {
+.header--search-form:focus,
+.header--search-form:active {
   border-radius: 6px;
-  -webkit-border-radius: 6px;
-  -moz-border-radius: 6px;
-  -ms-border-radius: 6px;
-  -o-border-radius: 6px;
 }
 .header--search-form input {
   min-height: 28px;
@@ -65,7 +58,8 @@
   border: none;
   box-shadow: none;
 }
-.header--search-form input:focus, .header--search-form input:active {
+.header--search-form input:focus,
+.header--search-form input:active {
   outline: none;
 }
 .header .notification {
@@ -116,8 +110,8 @@
     color: inherit;
   }
   .header--desktop .notification,
-.header--desktop .details,
-.header--desktop .avatar {
+  .header--desktop .details,
+  .header--desktop .avatar {
     text-align: center;
     width: 45px;
     display: inline-block;
@@ -136,10 +130,6 @@
     width: 20px;
     height: 20px;
     object-fit: cover;
-    -webkit-border-radius: 50%;
-    -moz-border-radius: 50%;
-    -ms-border-radius: 50%;
-    -o-border-radius: 50%;
   }
 }
 @media (max-width: 859px) {
@@ -195,10 +185,6 @@
     width: 20px;
     height: 20px;
     object-fit: cover;
-    -webkit-border-radius: 50%;
-    -moz-border-radius: 50%;
-    -ms-border-radius: 50%;
-    -o-border-radius: 50%;
   }
   .header--mobile .show-nav {
     display: block;
@@ -220,10 +206,6 @@
   height: 275px;
   object-fit: cover;
   border-radius: 50%;
-  -webkit-border-radius: 50%;
-  -moz-border-radius: 50%;
-  -ms-border-radius: 50%;
-  -o-border-radius: 50%;
 }
 .main--aside-status {
   position: absolute;
@@ -242,10 +224,6 @@
   box-shadow: 0 1px 0 rgba(27, 31, 35, 0.04);
   background: white;
   border-radius: 50%;
-  -webkit-border-radius: 50%;
-  -moz-border-radius: 50%;
-  -ms-border-radius: 50%;
-  -o-border-radius: 50%;
 }
 .main--aside-name {
   margin-top: 10px;
@@ -256,7 +234,6 @@
   color: #24292e;
 }
 .main--aside-username {
-  color: #586069;
   font-size: 1.9rem;
   color: #80868d;
 }
@@ -270,6 +247,7 @@
 }
 .main--content-tab {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   list-style: none;
 }
@@ -300,10 +278,6 @@
   padding: 0px 6px;
   border-width: 1px solid transparent;
   border-radius: 50%;
-  -webkit-border-radius: 50%;
-  -moz-border-radius: 50%;
-  -ms-border-radius: 50%;
-  -o-border-radius: 50%;
 }
 .main--content-tab .tab-active {
   opacity: 1;
@@ -317,7 +291,7 @@
 }
 .main--content-tab .tab-active:after {
   position: absolute;
-  content: "";
+  content: '';
   width: 100%;
   background-color: red;
   height: 2px;
@@ -337,7 +311,8 @@
   box-shadow: none;
   font-size: 1.4rem;
 }
-.main--content-search input:focus, .main--content-search input:active {
+.main--content-search input:focus,
+.main--content-search input:active {
   outline: none;
 }
 .main--content-repositories {
@@ -365,15 +340,12 @@
   height: 12px;
   width: 12px;
   border-radius: 50%;
-  -webkit-border-radius: 50%;
-  -moz-border-radius: 50%;
-  -ms-border-radius: 50%;
-  -o-border-radius: 50%;
 }
 .main--content-repositories-item-name {
   color: #0366d6;
   font-size: 1.8rem;
   font-weight: 500;
+  word-break: break-all;
   text-decoration: none;
 }
 .main--content-repositories-item-name:hover {
@@ -383,6 +355,7 @@
   width: 399px;
   font-size: 1.35rem;
   padding-right: 2.4rem;
+  word-wrap: break-word;
   color: #585059;
 }
 .main--content-repositories-item-star-icon {
@@ -404,8 +377,10 @@
 
 .repository--header-footer {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   margin-top: 8px;
+  width: 280px;
 }
 .repository--header-footer p {
   display: flex;
@@ -424,9 +399,9 @@
   align-items: center;
   font-size: 1.2rem;
   font-weight: 600;
-  padding: 4px 12px;
   padding: 0.5em 1em;
-  box-shadow: 0 1px 0 rgba(27, 31, 35, 0.04), inset 0 1px 0 rgba(255, 255, 255, 0.25);
+  box-shadow: 0 1px 0 rgba(27, 31, 35, 0.04),
+    inset 0 1px 0 rgba(255, 255, 255, 0.25);
   border: 1px solid lightgray;
   border-radius: 5px;
   background-color: #f3f4f6;
@@ -436,6 +411,26 @@
   font-size: 1.7rem;
   font-weight: 600;
   color: #585059;
+}
+
+@media (max-width: 450px) {
+  .repository--header-footer {
+    align-items: flex-start;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+
+  .repository--header-footer p {
+    font-size: 1.1rem;
+  }
+
+  .main--content-repositories-item-about {
+    font-size: 1.3rem;
+  }
+
+  .main--content-repositories-item-name {
+    font-size: 1.6rem;
+  }
 }
 
 .main {
@@ -542,7 +537,7 @@ body {
   overflow-x: hidden;
   position: relative;
   background: transparent;
-  font-family: "Poppins", helvetica;
+  font-family: 'Poppins', helvetica;
 }
 
 article,
@@ -558,5 +553,3 @@ nav,
 section {
   display: block;
 }
-
-/*# sourceMappingURL=style.css.map */
