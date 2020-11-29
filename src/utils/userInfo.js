@@ -49,11 +49,17 @@ function loadUserInfo(data) {
 }
 
 function renderHtml(data) {
-  const headerimg = document.querySelector('.avatar--pic');
+  const headerimg = document.querySelectorAll('.avatar--pic');
+  const headerName = document.querySelector('.header--name');
   const asideContainer = document.querySelector('.main--aside-container');
 
-  headerimg.src = data.avatarUrl;
-  headerimg.alt = data.login;
+  const toArray = Array.from(headerimg);
+  toArray.map((img) => {
+    img.src = data.avatarUrl;
+    img.alt = data.login;
+  });
+
+  headerName.textContent = data.login;
 
   const html = `
       <div class="main--aside-user">
