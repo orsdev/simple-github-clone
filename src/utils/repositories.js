@@ -1,3 +1,5 @@
+import {lastUpdated} from './lastUpdated';
+
 const queryTag =
   '{' +
   'viewer {' +
@@ -93,11 +95,7 @@ function loadRepositories({ totalCount, nodes }) {
                : ''
            }
               <p class="main--content-repositories-item-update">
-              Updated on
-               ${new Date(node.updatedAt).toLocaleString('default', {
-                 month: 'short'
-               })}
-               ${new Date(node.updatedAt).getDate()}
+               ${lastUpdated(node.updatedAt)}
               </p>
             </div>
           </div>
