@@ -193,7 +193,7 @@
 .main--aside {
   width: 307px;
   margin-bottom: 30px;
-  margin-right: 20px;
+  margin-right: 35px;
   position: relative;
 }
 .main--aside-user {
@@ -240,6 +240,57 @@
 .main--aside-about {
   font-size: 1.5rem;
   color: #24292e;
+}
+.main--aside button {
+  border: 1px solid lightgray;
+  padding: 0.5em 3em;
+  font-size: 1.4rem;
+  font-weight: 600;
+  width: 100%;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 1rem 0;
+  color: #6a6e74;
+  background-color: #fafbfc;
+}
+.main--aside-footer {
+  margin-top: 8px;
+  font-size: 1.35rem;
+  display: flex;
+  align-items: center;
+  opacity: .7;
+}
+.main--aside-footer .followers {
+  display: flex;
+  align-items: center;
+}
+.main--aside-footer .followers--count {
+  font-weight: bold;
+  margin-left: 5px;
+}
+.main--aside-footer .followers--text {
+  margin-left: 5px;
+}
+.main--aside-footer .following {
+  display: flex;
+  align-items: center;
+  margin-right: 7px;
+  margin-left: 7px;
+}
+.main--aside-footer .following--count {
+  font-weight: bold;
+  margin-left: 5px;
+}
+.main--aside-footer .following--text {
+  margin-left: 5px;
+}
+.main--aside-footer .stargazzers {
+  display: flex;
+  align-items: center;
+}
+.main--aside-footer .stargazzers--count {
+  margin-left: 5px;
+  font-weight: bold;
 }
 
 .main--content {
@@ -440,7 +491,7 @@
   margin: auto;
   margin-top: 40px;
   margin-bottom: 40px;
-  padding: 0 5em;
+  padding: 0 1em;
 }
 
 @media (max-width: 970px) {
