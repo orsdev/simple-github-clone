@@ -112,13 +112,15 @@
       </nav>
     </div>
   </header>
-  <main class="main">
-    <aside class="main--aside">
-      <div class="main--aside-container"></div>
-    </aside>
-    <div class="main--content">
-      <ul class="main--content-tab">
-        <li class="main--content-tab-item">
+  <section class="main--tab">
+    <div class="main--tab-aside">
+       <div class="main--tab-aside-sticky">
+            <img class="avatar--pic sticky--avatar" alt="avatar">
+            <span class="sticky--name"></span>
+        </div>
+    </div>
+    <ul>
+        <li class="main--tab-item">
           <svg class="octicon octicon-book UnderlineNav-octicon hide-sm" height="16" viewbox="0 0 16 16" version="1.1"
             width="16" aria-hidden="true">
             <path fill-rule="evenodd"
@@ -127,7 +129,7 @@
           </svg>
           <span>Overview</span>
         </li>
-        <li class="main--content-tab-item tab-active">
+        <li class="main--tab-item tab-active">
           <svg class="octicon octicon-repo UnderlineNav-octicon hide-sm" height="16" viewbox="0 0 16 16" version="1.1"
             width="16" aria-hidden="true">
             <path fill-rule="evenodd"
@@ -137,7 +139,7 @@
           <span>Repositories</span>
           <span class="badge" id="badge"></span>
         </li>
-        <li class="main--content-tab-item">
+        <li class="main--tab-item">
           <svg class="octicon octicon-project UnderlineNav-octicon hide-sm" height="16" viewbox="0 0 16 16"
             version="1.1" width="16" aria-hidden="true">
             <path fill-rule="evenodd"
@@ -146,7 +148,7 @@
           </svg>
           <span>Projects</span>
         </li>
-        <li class="main--content-tab-item">
+        <li class="main--tab-item">
           <svg class="octicon octicon-package UnderlineNav-octicon hide-sm" height="16" viewbox="0 0 16 16"
             version="1.1" width="16" aria-hidden="true">
             <path fill-rule="evenodd"
@@ -155,7 +157,13 @@
           </svg>
           <span>Packages</span>
         </li>
-      </ul>
+    </ul>
+  </section>
+  <main class="main">
+    <aside class="main--aside">
+      <div class="main--aside-container"></div>
+    </aside>
+    <div class="main--content">
       <form action="" class="main--content-search">
         <input type="search" name="search-repo" id="search-repo" placeholder="Find a repository...">
       </form>

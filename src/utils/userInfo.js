@@ -51,6 +51,7 @@ function loadUserInfo(data) {
 function renderHtml(data) {
   const headerimg = document.querySelectorAll('.avatar--pic');
   const headerName = document.querySelector('.header--name');
+  const stickyName = document.querySelector('.sticky--name');
   const asideContainer = document.querySelector('.main--aside-container');
 
   const toArray = Array.from(headerimg);
@@ -60,6 +61,7 @@ function renderHtml(data) {
   });
 
   headerName.textContent = data.login;
+  stickyName.textContent = data.login;
 
   const html = `
       <div class="main--aside-user">

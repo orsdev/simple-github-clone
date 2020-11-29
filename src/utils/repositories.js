@@ -86,12 +86,17 @@ function loadRepositories({ totalCount, nodes }) {
              ${
                node.parent
                  ? `<p class="main--content-repositories-item-fork">
-            <i class="fa fa-code-fork main--content-repositories-item-fork-icon" aria-hidden="true"></i> ${node.parent.forkCount} </p>`
+                      <img src="https://res.cloudinary.com/osdev/image/upload/v1606463789/github/fork_iwl0v6.svg" class="main--content-repositories-item-fork-icon" />
+                        ${node.parent.forkCount} 
+                    </p>`
                  : ''
              }
            ${
              !node.parent && node.forkCount > 0
-               ? `<p class="main--content-repositories-item-fork"><i class="fa fa-code-fork main--content-repositories-item-fork-icon" aria-hidden="true"></i> ${node.forkCount}</p>`
+               ? `<p class="main--content-repositories-item-fork">
+                   <img src="https://res.cloudinary.com/osdev/image/upload/v1606463789/github/fork_iwl0v6.svg" class="main--content-repositories-item-fork-icon" />
+                  ${node.forkCount}
+               </p>`
                : ''
            }
               <p class="main--content-repositories-item-update">
