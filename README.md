@@ -1,6 +1,6 @@
 # Github Clone
 
-This is a simple github profile clone
+This is a simple github profile clone.
 
 ## Prerequisites
 
